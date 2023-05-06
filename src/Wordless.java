@@ -26,14 +26,16 @@ public class Wordless {
     }
 
     static void changeFace(@NotNull String answer, data info, char guess) {
-        char[] tmpFace = new char[answer.length()];
+        char[] tmpFace = info.face.toCharArray();
         for (int i = 0; i < answer.length(); ++ i) {
-            tmpFace[i] = answer.charAt(i) == guess ? guess : '*';
+            if (answer.charAt(i) == guess) {
+                tmpFace[i] = guess;
+            }
         }
         info.face = String.copyValueOf(tmpFace);
     }
 
-    static boolean playGame(String answer, @NotNull data info) {
+    static boolean playGame(String answer, @NotNull data info) { // Return value means whether the game is end or not.
         Scanner input = new Scanner(System.in);
 
         String tip = "(Guess)Enter a letter in word" + info.face + " >";
@@ -49,7 +51,7 @@ public class Wordless {
         if (info.face.contains(guess)){
             String exitTip = '\t' + guess + " is already in the word";
             System.out.println(exitTip);
-            return true;
+            return false;
         }
 
         if (answer.contains(guess)) {
@@ -59,23 +61,23 @@ public class Wordless {
                         + "You missed " + info.cnt + "time"
                         + (info.cnt == 1 ? "" : "s");
                 System.out.println(guessed);
-                return false;
-            } else return true;
+                return true;
+            } else return false;
         } else {
             String foundNot = '\t' + guess + " is not in the word";
             System.out.println(foundNot);
             ++ info.cnt;
-            return true;
+            return false;
         }
     }
 
     static boolean newGame(@NotNull data info) {
         String answer = getRandomWord();
-        String mod = "*********";
-        info.face = mod.substring(0, answer.length());
+        String mod = "**********";
+        info.face = mod.substring(0, answer.length() - 1);
 
-        boolean flag = true;
-        while(flag) {
+        boolean flag = false;
+        while(!flag) {
             flag = playGame(answer, info);
         }
 
