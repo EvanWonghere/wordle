@@ -28,7 +28,7 @@ public class Wordless {
         return guess.charAt(0) >= 'a' && guess.charAt(0) <= 'z';
     }
 
-    static void changeFace(@NotNull String answer, data info, char guess) {
+    static void changeFace(@NotNull String answer, @NotNull data info, char guess) {
         char[] tmpFace = info.face.toCharArray();
         for (int i = 0; i < answer.length(); ++ i) {
             if (answer.charAt(i) == guess) {
