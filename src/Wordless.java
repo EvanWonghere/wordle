@@ -10,12 +10,15 @@ public class Wordless {
     }
 
     static int getRandomIndex() {
-        return (int) (Math.random() * 10) % 8;
+        return (int) (Math.random() * 22);
     }
 
     static String getRandomWord() {
         String[] words = {"hello", "world", "java", "python",
-                "apple", "banana", "pear", "watermelon"};
+                "apple", "banana", "pear", "watermelon",
+                "access", "project", "intention", "negotiate",
+                "disappointing", "alternative", "generous", "strategy",
+                "primary", "grab", "logic", "theory", "download"};
 
         return words[getRandomIndex()];
     }
@@ -38,7 +41,7 @@ public class Wordless {
     static boolean playGame(String answer, @NotNull data info) { // Return value means whether the game is end or not.
         Scanner input = new Scanner(System.in);
 
-        String tip = "(Guess)Enter a letter in word" + info.face + " >";
+        String tip = "(Guess)Enter a letter in word " + info.face + " > ";
         System.out.print(tip);
         String guess = input.next();
 
@@ -58,8 +61,8 @@ public class Wordless {
             changeFace(answer, info, guess.charAt(0));
             if (answer.equals(info.face)){
                 String guessed = "The word is " + answer + ". "
-                        + "You missed " + info.cnt + "time"
-                        + (info.cnt == 1 ? "" : "s");
+                        + "You missed " + info.cnt + " time"
+                        + (info.cnt <= 1 ? "" : "s");
                 System.out.println(guessed);
                 return true;
             } else return false;
@@ -74,7 +77,7 @@ public class Wordless {
     static boolean newGame(@NotNull data info) {
         String answer = getRandomWord();
         String mod = "**********";
-        info.face = mod.substring(0, answer.length() - 1);
+        info.face = mod.substring(0, answer.length());
 
         boolean flag = false;
         while(!flag) {
@@ -89,7 +92,7 @@ public class Wordless {
         return res.equals("y") || res.equals("Y") || res.equals("n") || res.equals("N");
     }
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         data info = new data();
 
