@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="953e27f1-336a-4e6c-a93a-923a23c6d55f" name="变更" comment="Optimized code">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="953e27f1-336a-4e6c-a93a-923a23c6d55f" name="变更" comment="Updated Dictionary">
       <change afterPath="$PROJECT_DIR$/src/swing.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test.form" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Wordless.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Wordless.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683361109423</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updated Dictionary">
+      <created>1683363576901</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683363576901</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,6 +130,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="Optimized code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimized code" />
+    <MESSAGE value="Updated Dictionary" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Dictionary" />
   </component>
 </project>

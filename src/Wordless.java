@@ -76,7 +76,7 @@ public class Wordless {
 
     static boolean newGame(@NotNull data info) {
         String answer = getRandomWord();
-        String mod = "**********";
+        String mod = "********************";
         info.face = mod.substring(0, answer.length());
 
         boolean flag = false;
